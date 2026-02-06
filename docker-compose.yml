@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    ports:
+      - "3001:3000"
+    environment:
+      REDIS_URL: redis://redis:6379
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: Rishika@24680
+      DB_NAME: farmlokal
+    depends_on:
+      - redis
+      - mysql
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: Rishika@24680
+      MYSQL_DATABASE: farmlokal
+    ports:
+      - "3306:3306"

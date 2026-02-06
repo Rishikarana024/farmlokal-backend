@@ -1,0 +1,37 @@
+{
+  "name": "farmlokal-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "seed": "ts-node scripts/seed.ts",
+    "loadtest": "autocannon http://localhost:3000/api/products"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^10.2.0",
+    "axios": "^1.13.4",
+    "axios-retry": "^4.5.0",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "mysql2": "^3.16.3",
+    "opossum": "^9.0.0",
+    "pino": "^10.3.0",
+    "redis": "^5.10.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.1",
+    "@types/opossum": "^8.1.9",
+    "autocannon": "^8.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
